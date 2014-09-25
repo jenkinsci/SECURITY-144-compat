@@ -7,8 +7,6 @@ import org.jenkinsci.remoting.RoleSensitive;
 
 /**
  * {@link FileCallable}s that can be executed on the master, sent by the slave.
- *
- * @since 1.THU
  */
 public abstract class SlaveToMasterFileCallable<T> implements FileCallable<T>, RoleSensitive {
     public void checkRoles(RoleChecker checker) throws SecurityException {

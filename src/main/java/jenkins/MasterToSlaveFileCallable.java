@@ -7,8 +7,6 @@ import org.jenkinsci.remoting.RoleSensitive;
 
 /**
  * {@link FileCallable}s that are meant to be only used on the master.
- *
- * @since 1.THU
  */
 public abstract class MasterToSlaveFileCallable<T> implements FileCallable<T>, RoleSensitive {
     public void checkRoles(RoleChecker checker) throws SecurityException {

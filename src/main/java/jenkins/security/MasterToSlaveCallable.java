@@ -8,7 +8,6 @@ import org.jenkinsci.remoting.RoleSensitive;
  * Convenient {@link Callable} meant to be run on slave.
  *
  * @author Kohsuke Kawaguchi
- * @since 1.THU
  */
 public abstract class MasterToSlaveCallable<V, T extends Throwable> implements Callable<V,T>, RoleSensitive {
     public void checkRoles(RoleChecker checker) throws SecurityException {
