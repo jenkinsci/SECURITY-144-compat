@@ -10,7 +10,7 @@ import org.jenkinsci.remoting.RoleSensitive;
  * @author Kohsuke Kawaguchi
  * @since 1.THU
  */
-public abstract class MasterToSlaveCallable<V, T extends Throwable> implements Callable<V,T> {
+public abstract class MasterToSlaveCallable<V, T extends Throwable> implements Callable<V,T>, RoleSensitive {
     public void checkRoles(RoleChecker checker) throws SecurityException {
         // no check actually happens when this class definition is used, so this code will never run
         checker.check((RoleSensitive)this,Roles.SLAVE);
