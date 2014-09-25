@@ -22,7 +22,7 @@ You can keep whatever core dependency you have, and instead just add this jar as
 
     <dependency>
       <groupId>org.jenkins-ci</groupId>
-      <artifactId>rolechecker-compatibility</artifactId>
+      <artifactId>security144-compatibility</artifactId>
       <version>1.0</version>
     </dependency>
 
