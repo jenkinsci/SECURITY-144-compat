@@ -20,7 +20,7 @@ You can keep whatever core dependency you have, and instead just add this JAR as
 
     <dependency>
       <groupId>org.jenkins-ci</groupId>
-      <artifactId>security144-compatibility</artifactId>
+      <artifactId>SECURITY-144-compat</artifactId>
       <version>1.0</version>
     </dependency>
 
