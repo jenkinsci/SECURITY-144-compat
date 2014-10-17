@@ -3,7 +3,7 @@ This small module allows Jenkins plugins to incorporate the SECURITY-144 protect
 while still remaining installable on earlier version of Jenkins.
 
 ## Problem
-The SECURITY-144 protection work in Jenkins 1.x/1.y.1 required API changes in the core as well as the `remoting` library.
+[The SECURITY-144 protection work](http://jenkins-ci.org/security-144/) required API changes in the core as well as the `remoting` library.
 Therefore, for your plugin to take advantages of the new infrastructure, you'll have to bump up the core dependency.
 But this poses a problem:
 
@@ -23,10 +23,18 @@ You can keep whatever core dependency you have, and instead just add this JAR as
       <artifactId>SECURITY-144-compat</artifactId>
       <version>1.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci.main</groupId>
+      <artifactId>remoting</artifactId>
+      <version>2.47</version>
+      <scope>provided</scope>
+    </dependency>
 
 This will bring all the relevant newly added classes into your dependency. When you run on newer versions
 of Jenkins (such as 1.x), these classes will ensure your code loads into JVM fine.
 The `RoleSensitive.checkRoles()` method will never be invoked since Jenkins core is oblivious to such an addition.
+
+The `provided` scoped remoting jar is necessary only to find which `Callable` impls need to be modified to extend from `MasterToSlaveCallable`, `SlaveToMasterCallable`, and etc. You can remove this dependency after the initial code change (see the caveat section below.)
 
 But when you run on 1.x/1.y.1 or newer versions, the classloader visibility rules ensure that these classes
 will never get loaded into JVM, and references from your plugin will instead resolve to the corresponding
@@ -42,3 +50,5 @@ but that is not the case when you run on affected versions of Jenkins.
 Therefore, you'll have to perform an explicit cast whenever this is necessary. That ensures that your plugin
 does not result in a bytecode verification failure when run on vulnerable versions of Jenkins, and that cast gets
 optimized away when you run on newer versions of Jenkins.
+
+If you have an implicit type assignment somewhere in your code, the added `remoting` dependency prevents it from getting flagged as an error. On the other hand, that `remoting` dependency helps you find your `Callable` impls that are directly extending from `Callable`, which should be changed to extend from either `MasterToSlaveCallable` or `SlaveToMasterCallable`. So you need to pick which evil you prefer. You can also periodically add/remove this dependency to test it both ways, although it's a bit more hassle.
