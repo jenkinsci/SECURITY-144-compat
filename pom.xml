@@ -11,9 +11,9 @@
   <name>Compatibility Layer for SECURITY-144</name>
 
   <scm>
-    <connection>scm:git:git://github.com/jenkinsci/lib-${project.artifactId}.git</connection>
-    <developerConnection>scm:git:git@github.com:jenkinsci/lib-${project.artifactId}.git</developerConnection>
-    <url>https://github.com/jenkinsci/lib-${project.artifactId}</url>
+    <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}.git</developerConnection>
+    <url>https://github.com/jenkinsci/${project.artifactId}</url>
   </scm>
 
   <dependencies>
