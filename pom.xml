@@ -7,7 +7,7 @@
   </parent>
   <artifactId>SECURITY-144-compat</artifactId>
   
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <name>Compatibility Layer for SECURITY-144</name>
 
   <scm>
