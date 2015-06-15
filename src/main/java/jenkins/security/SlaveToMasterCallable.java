@@ -8,6 +8,7 @@ import org.jenkinsci.remoting.RoleSensitive;
  * Convenient {@link Callable} that are meant to run on the master (sent by slave/CLI/etc).
  *
  * @author Kohsuke Kawaguchi
+ * @deprecated Use a core dependency of 1.580.1 or later rather than this library.
  */
 public abstract class SlaveToMasterCallable<V, T extends Throwable> implements Callable<V,T>, RoleSensitive {
     public void checkRoles(RoleChecker checker) throws SecurityException {

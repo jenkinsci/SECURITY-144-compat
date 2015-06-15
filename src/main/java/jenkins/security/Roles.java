@@ -12,6 +12,7 @@ import org.jenkinsci.remoting.Role;
  * not have any role.
  *
  * @author Kohsuke Kawaguchi
+ * @deprecated Use a core dependency of 1.580.1 or later rather than this library.
  */
 public class Roles {
     /**

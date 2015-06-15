@@ -14,6 +14,7 @@ import java.util.Collection;
  *
  * @author Kohsuke Kawaguchi
  * @see RoleChecker
+ * @deprecated Use a core dependency of 1.580.1 or later rather than this library.
  */
 public interface RoleSensitive {
     /**

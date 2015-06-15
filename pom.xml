@@ -8,7 +8,7 @@
   <artifactId>SECURITY-144-compat</artifactId>
   
   <version>1.1-SNAPSHOT</version>
-  <name>Compatibility Layer for SECURITY-144</name>
+  <name>Deprecated compatibility layer for SECURITY-144</name>
 
   <scm>
     <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}.git</connection>

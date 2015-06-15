@@ -2,6 +2,9 @@
 This small module allows Jenkins plugins to incorporate the SECURITY-144 protection in newer versions of Jenkins core,
 while still remaining installable on earlier version of Jenkins.
 
+Due to the unresolved [JENKINS-25625](https://issues.jenkins-ci.org/browse/JENKINS-25625), it is no longer recommended you use this library.
+Instead just update your plugin’s core baseline to 1.580.1 or newer, which will no longer exclude many users from receiving plugin updates.
+
 ## Problem
 [The SECURITY-144 protection work](http://jenkins-ci.org/security-144/) required API changes in the core as well as the `remoting` library.
 Therefore, for your plugin to take advantages of the new infrastructure, you'll have to bump up the core dependency.
