@@ -14,6 +14,7 @@ import org.jenkinsci.remoting.Role;
  * @author Kohsuke Kawaguchi
  * @deprecated Use a core dependency of 1.580.1 or later rather than this library.
  */
+@Deprecated
 public class Roles {
     /**
      * Indicates that a callable runs on masters, requested by slaves/CLI/maven/whatever.
