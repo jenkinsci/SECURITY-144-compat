@@ -46,7 +46,9 @@ import java.util.Collections;
  * @author Kohsuke Kawaguchi
  * @see RoleSensitive
  * @see RoleChecker
+ * @deprecated Use a core dependency of 1.580.1 or later rather than this library.
  */
+@Deprecated
 public final class Role {
     private final String name;
 

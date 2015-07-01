@@ -14,7 +14,9 @@ import java.util.Collection;
  *
  * @author Kohsuke Kawaguchi
  * @see RoleChecker
+ * @deprecated Use a core dependency of 1.580.1 or later rather than this library.
  */
+@Deprecated
 public interface RoleSensitive {
     /**
      * Verifies the roles expected by this callable by invoking {@link RoleChecker#check(RoleSensitive, Collection)}

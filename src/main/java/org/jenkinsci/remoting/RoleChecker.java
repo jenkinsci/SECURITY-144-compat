@@ -10,7 +10,9 @@ import java.util.Collections;
  *
  * @author Kohsuke Kawaguchi
  * @see ChannelBuilder#withRoleChecker(RoleChecker)
+ * @deprecated Use a core dependency of 1.580.1 or later rather than this library.
  */
+@Deprecated
 public abstract class RoleChecker {
     /**
      * Called from {@link RoleSensitive#checkRoles(RoleChecker)} to ensure that this side of the channel
